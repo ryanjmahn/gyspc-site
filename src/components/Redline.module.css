@@ -1,0 +1,67 @@
+.root {
+  position: relative;
+  display: inline-block;
+}
+
+.svg {
+  position: absolute;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.stroke {
+  fill: none;
+  stroke: var(--mark);
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.strike .svg {
+  inset: 0 -0.08em;
+  width: calc(100% + 0.16em);
+  height: 100%;
+}
+
+.strike .stroke {
+  stroke-width: max(3px, 0.06em);
+}
+
+.underline .svg {
+  left: -0.05em;
+  right: -0.05em;
+  bottom: -0.3em;
+  width: calc(100% + 0.1em);
+  height: 0.35em;
+}
+
+.circle .svg {
+  left: -0.9em;
+  top: -0.65em;
+  width: calc(100% + 1.8em);
+  height: calc(100% + 1.3em);
+}
+
+.circle .stroke {
+  stroke-width: 2px;
+}
+
+/* Caret sits below the baseline at the insertion point. */
+.caret {
+  padding-left: 0.1em;
+}
+
+.caret .svg {
+  left: -0.42em;
+  bottom: -0.05em;
+  width: 0.5em;
+  height: 0.42em;
+}
+
+.caret .stroke {
+  stroke-width: max(2.5px, 0.045em);
+}
+
+.inserted {
+  display: inline-block;
+}

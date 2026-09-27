@@ -1,0 +1,30 @@
+.note {
+  align-self: start;
+  padding-left: var(--s-2);
+  border-left: var(--hairline);
+  max-width: 34ch;
+}
+
+.marker {
+  display: block;
+  margin-bottom: var(--s-1);
+  font-family: var(--font-mono);
+  font-size: var(--fs--2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-1);
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 959px) {
+  .note {
+    margin-left: var(--s-3);
+  }
+}

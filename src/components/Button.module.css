@@ -1,0 +1,89 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-size: var(--fs-0);
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease);
+}
+
+.button:hover {
+  text-decoration: none;
+}
+
+.primary {
+  background: var(--mark);
+  color: var(--on-mark);
+}
+
+.primary:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--hairline-color);
+  border-color: color-mix(in srgb, var(--ink) 45%, transparent);
+}
+
+.ghost:hover {
+  border-color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 5%, transparent);
+}
+
+.wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+/* Inactive until a registration link exists: keeps the mark fill so the CTA still reads,
+   but the cursor and tooltip say it isn't live yet. */
+.disabled {
+  cursor: not-allowed;
+}
+
+.disabled.primary:hover {
+  background: var(--mark);
+  color: var(--on-mark);
+}
+
+.tip {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  padding: 6px 10px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: var(--fs--2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  translate: 0 -4px;
+  pointer-events: none;
+  transition:
+    opacity var(--t-fast) var(--ease),
+    translate var(--t-fast) var(--ease);
+  z-index: 60;
+}
+
+.wrap:hover .tip,
+.wrap:focus-within .tip {
+  opacity: 1;
+  translate: 0 0;
+}
