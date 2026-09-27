@@ -1,0 +1,119 @@
+@media (min-width: 960px) {
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    column-gap: var(--col-gap);
+    align-items: start;
+  }
+
+  .layout > :first-child {
+    position: sticky;
+    top: calc(var(--nav-h-compact) + var(--s-4));
+  }
+}
+
+.list {
+  border-top: 1px solid var(--ink);
+}
+
+.item {
+  border-bottom: var(--hairline);
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr) 1.25rem;
+  align-items: baseline;
+  gap: var(--s-1);
+  padding-block: var(--s-3);
+  cursor: pointer;
+  list-style: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary:hover .question {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.qNo {
+  font-family: var(--font-mono);
+  font-size: var(--fs--1);
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.question {
+  font-family: var(--font-serif);
+  font-size: var(--fs-2);
+  line-height: 1.2;
+}
+
+/* A plus drawn in ink that turns into a minus when open. */
+.icon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  align-self: center;
+}
+
+.icon::before,
+.icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 14px;
+  height: 1.5px;
+  background: var(--accent);
+  transition: transform var(--t-fast) var(--ease);
+}
+
+.icon::after {
+  transform: rotate(90deg);
+}
+
+.item[open] .icon::after {
+  transform: rotate(0deg);
+}
+
+.answer {
+  padding: 0 0 var(--s-3) calc(3.5rem + var(--s-1));
+  max-width: 60ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon::before,
+  .icon::after {
+    transition: none;
+  }
+}
+
+/* Smooth open/close where the browser supports animating <details>. */
+@supports selector(::details-content) {
+  .item {
+    interpolate-size: allow-keywords;
+  }
+
+  .item::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition:
+      block-size var(--t-slow) var(--ease),
+      content-visibility var(--t-slow) allow-discrete;
+  }
+
+  .item[open]::details-content {
+    block-size: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item::details-content {
+    transition: none;
+  }
+}
