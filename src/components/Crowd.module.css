@@ -1,0 +1,31 @@
+.crowd {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Everyone rises into place, left to right, the first time the crowd is seen. */
+.person {
+  transform-box: fill-box;
+  transition: transform 700ms var(--ease) calc(var(--i) * 18ms);
+}
+
+.waiting .person {
+  transform: translateY(110%);
+}
+
+/* Hover: a person steps up. */
+.person:hover {
+  transform: translateY(-10px);
+  transition-delay: 0s;
+  transition-duration: var(--t-fast);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .person,
+  .waiting .person {
+    transition: none;
+    transform: none;
+  }
+}

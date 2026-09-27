@@ -1,0 +1,34 @@
+.box {
+  padding: var(--s-2) var(--s-2) var(--s-2) var(--s-2);
+  border-top: 3px solid var(--accent);
+  background: var(--tint);
+  margin-bottom: var(--s-4);
+}
+
+.lead {
+  font-family: var(--font-mono);
+  font-size: var(--fs--1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.number {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35em;
+  font-family: var(--font-serif);
+  font-size: var(--fs-6);
+  line-height: 1;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  margin-top: var(--s-1);
+}
+
+.unit {
+  font-family: var(--font-mono);
+  font-size: var(--fs--1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
