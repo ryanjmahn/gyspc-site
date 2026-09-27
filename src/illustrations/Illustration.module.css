@@ -1,0 +1,78 @@
+/* One construction language for all four plates: 1.5px ink strokes, flat palette fills, mono
+   labels, the mark colour only for the policy layer. */
+
+.svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.ink {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.inkFill {
+  fill: var(--ink);
+}
+
+.dots {
+  fill: none;
+  stroke: var(--ink);
+  stroke-linecap: round;
+}
+
+.paperFill {
+  fill: var(--paper-2);
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+
+.grid {
+  fill: none;
+  stroke: var(--grid-line);
+  stroke-width: 1;
+}
+
+.dashed {
+  stroke-dasharray: 5 5;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  fill: var(--ink-soft);
+}
+
+.monoInk {
+  font-family: var(--font-mono);
+  fill: var(--ink);
+}
+
+.red {
+  fill: none;
+  stroke: var(--mark);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.redDashed {
+  stroke-dasharray: 6 6;
+}
+
+.redNote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 28px;
+  fill: var(--mark);
+}
+
+.redMono {
+  font-family: var(--font-mono);
+  fill: var(--mark);
+}
