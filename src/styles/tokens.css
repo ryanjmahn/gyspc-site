@@ -1,0 +1,130 @@
+/*
+ * Design tokens — "The Annotated Page".
+ * Colours have fixed roles; see docs/reference-notes.md and the build spec §3.
+ */
+
+:root {
+  /* ---- Base: white page, navy ink ---- */
+  --paper: #ffffff; /* page background */
+  --paper-2: #f3f6fa; /* neutral band */
+  --ink: #0b1f3a; /* text, hairlines: deep navy */
+  --ink-soft: #4a5a70; /* secondary text */
+  --deep: #0b1f3a; /* navy footer band */
+
+  /* ---- Global palette (UN SDG-inspired, darkened to pass AA as text on white and on its tint) ---- */
+  --c-blue: #0069b4;
+  --t-blue: #e8f2fa;
+  --c-orange: #a84a0c;
+  --t-orange: #fcefe4;
+  --c-green: #2f7a3a;
+  --t-green: #eaf4ea;
+  --c-teal: #006f7e;
+  --t-teal: #e3f4f6;
+  --c-magenta: #b5134f;
+  --t-magenta: #fbe9f0;
+  --c-purple: #6a3fa0;
+  --t-purple: #f1ebf8;
+  --c-amber: #8f5a00;
+  --t-amber: #fdf3de;
+
+  /* Each section re-points these (see .accent-* in global.css). */
+  --accent: var(--c-blue);
+  --tint: var(--t-blue);
+  /* The editor's pencil — policy / ethics intervention marks. Takes the section's accent. */
+  --mark: var(--accent);
+  --on-mark: #ffffff;
+
+  /* Host brands — used only on host-attributed elements. */
+  --stemise: #2b4bff; /* sampled from stemise.org */
+  --ies: #10244c; /* IES navy, sampled from ie-society.com */
+  --ies-accent: #cf6317; /* IES orange — graphics only (fails AA as text) */
+
+  --hairline-color: rgb(11 31 58 / 0.16);
+  --hairline: 1px solid var(--hairline-color);
+  --grid-line: rgb(11 31 58 / 0.08); /* faint plotting grid in figures */
+
+  /* ---- Type families (fixed roles, never swapped) ---- */
+  --font-serif:
+    'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif; /* humanities voice */
+  --font-mono:
+    'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace; /* science voice */
+  --font-sans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif; /* body & UI */
+
+  /* ---- Modular type scale, ratio 1.25 ---- */
+  --fs--2: 0.64rem;
+  --fs--1: 0.8rem;
+  --fs-0: 1rem;
+  --fs-1: 1.25rem;
+  --fs-2: 1.563rem;
+  --fs-3: 1.953rem;
+  --fs-4: 2.441rem;
+  --fs-5: 3.052rem;
+  --fs-6: 3.815rem;
+  --fs-7: 4.768rem;
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.25;
+  --lh-body: 1.6;
+
+  /* ---- 8px spacing scale ---- */
+  --s-1: 0.5rem; /* 8 */
+  --s-2: 1rem; /* 16 */
+  --s-3: 1.5rem; /* 24 */
+  --s-4: 2rem; /* 32 */
+  --s-5: 2.5rem; /* 40 */
+  --s-6: 3rem; /* 48 */
+  --s-8: 4rem; /* 64 */
+  --s-10: 5rem; /* 80 */
+  --s-12: 6rem; /* 96 */
+  --s-16: 8rem; /* 128 */
+
+  /* ---- Layout ---- */
+  --page-max: 78rem;
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --margin-col: 15rem; /* the manuscript's annotation column */
+  --col-gap: clamp(2rem, 5vw, 5rem);
+  /* Vertical rhythm: every section uses these, so spacing stays consistent. */
+  --section-pad: clamp(var(--s-10), 10vw, var(--s-16)); /* 80 → 128px */
+  --section-gap: clamp(var(--s-5), 5vw, var(--s-8)); /* header → content, 40 → 64px */
+  --nav-h: 4.5rem;
+  --nav-h-compact: 3.5rem;
+  --radius: 3px;
+
+  /* ---- Motion ---- */
+  --t-fast: 180ms;
+  --t-slow: 600ms;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  color-scheme: light;
+}
+
+/* Dark mode: deep navy night; same roles, lighter accents, dark tints. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #0b1726;
+    --paper-2: #10203a;
+    --ink: #e8eef6;
+    --ink-soft: #9db0c6;
+    --deep: #07111d;
+    --c-blue: #5cb8f0;
+    --t-blue: #0f2740;
+    --c-orange: #f29a5c;
+    --t-orange: #2a1d14;
+    --c-green: #7cc98a;
+    --t-green: #13261a;
+    --c-teal: #4fc7d6;
+    --t-teal: #0e2629;
+    --c-magenta: #f07aa6;
+    --t-magenta: #2a1320;
+    --c-purple: #b99cf0;
+    --t-purple: #1f1830;
+    --c-amber: #e7b65a;
+    --t-amber: #2a2211;
+    --on-mark: #0b1726;
+    --stemise: #8fa0ff;
+    --ies: #c9d6ee;
+    --hairline-color: rgb(232 238 246 / 0.18);
+    --grid-line: rgb(232 238 246 / 0.08);
+    color-scheme: dark;
+  }
+}
