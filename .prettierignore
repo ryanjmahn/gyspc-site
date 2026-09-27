@@ -1,0 +1,7 @@
+dist
+node_modules
+docs/reference
+package-lock.json
+GYSPC_SITE_BUILD_SPEC.md
+src/illustrations/landDots.ts
+src/illustrations/worldMap.ts
