@@ -1,0 +1,54 @@
+.mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  line-height: 1.15;
+}
+
+.logo {
+  flex: none;
+  width: 1.6em;
+  height: 1.6em;
+  object-fit: contain;
+}
+
+.ies .logo {
+  border-radius: 50%;
+}
+
+.lg .logo {
+  width: 2.2em;
+  height: 2.2em;
+}
+
+/* IES: serif, in its own navy. */
+.ies {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--ies);
+  letter-spacing: 0.01em;
+}
+
+/* STEMise: mono, in its own blue. */
+.stemise {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--stemise);
+}
+
+.sm {
+  font-size: var(--fs-0);
+}
+
+.ies.sm {
+  font-size: var(--fs-1);
+}
+
+.lg {
+  font-size: var(--fs-3);
+}
+
+.ies.lg {
+  font-weight: 400;
+}

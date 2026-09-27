@@ -1,0 +1,44 @@
+.belt {
+  margin-top: var(--section-gap);
+  padding-top: var(--s-4);
+  border-top: var(--hairline);
+}
+
+.viewport {
+  overflow: hidden;
+  margin-top: var(--s-3);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.track {
+  display: flex;
+  gap: var(--s-8);
+  width: max-content;
+  animation: belt 40s linear infinite;
+}
+
+.track:hover,
+.track:focus-within {
+  animation-play-state: paused;
+}
+
+.track img {
+  height: 2.25rem;
+  width: auto;
+  filter: grayscale(1);
+  opacity: 0.8;
+}
+
+@keyframes belt {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+  }
+}
