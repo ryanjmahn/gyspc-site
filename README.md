@@ -3,6 +3,8 @@
 The official site for GYSPC, hosted by **IES (Interscholastic Ethics Society) × STEMise**.
 It's a single long page built with Vite, React and TypeScript.
 
+https://gyspc-site-finder.lovable.app
+
 ## Run it
 
 ```bash
